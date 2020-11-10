@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import requests from "../Services/requests";
 import Axios from "axios";
 import "../Styles/Banner.css";
+import { Link } from "react-router-dom";
 
-function Banner() {
+function Banner(props) {
   const [currentMovie, setcurrentMovie] = useState({
     overview: "",
   });
@@ -30,16 +31,26 @@ function Banner() {
         }}
         id="banner"
       >
-        <div id="info-container">
-          <div className="movieTitle">
-            <h2 style={{ marginBottom: "2px" }}>
-              {currentMovie.title || currentMovie.name}
-            </h2>
-            <p>{currentMovie.overview.substring(0, 100)}...</p>
+        {props.showInfo ? (
+          <div id="info-container">
+            <div className="movieTitle">
+              <h2 style={{ marginBottom: "2px" }}>
+                {currentMovie.title || currentMovie.name}
+              </h2>
+              <p>{currentMovie.overview.substring(0, 100)}...</p>
+            </div>
+            <Link
+              to={{
+                pathname: `/detail/${currentMovie.id}`,
+                type: currentMovie.title ? "movie" : "tv",
+              }}
+            >
+              <button className="banner-btn">MORE</button>
+            </Link>
+
+            {/* <button className="banner-btn">WATCH TRAILER</button> */}
           </div>
-          <button className="banner-btn">MORE</button>
-          <button className="banner-btn">WATCH TRAILER</button>
-        </div>
+        ) : null}
       </div>
       <div className="shadowmask"></div>
     </div>

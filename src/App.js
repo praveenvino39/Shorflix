@@ -1,16 +1,18 @@
 import "./App.css";
 import AppBar from "./Components/AppBar";
-import Banner from "./Components/Banner";
-import Row from "./Components/Row";
+import Detail from "./Components/Detail";
+import Home from "./Components/Home";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <AppBar />
-      <Banner />
-      <Row request="trending" section="Trending Now" />
-      <Row request="ratedMovies" section="Top Rated Movies" />
-      <Row request="ratedTvShows" section="Top Rated TV Shows" />
+      <Router>
+        <AppBar />
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/detail/:id" component={Detail}></Route>
+      </Router>
+      {/* <Detail /> */}
     </div>
   );
 }

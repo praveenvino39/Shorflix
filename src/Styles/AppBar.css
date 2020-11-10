@@ -1,10 +1,10 @@
 #appLogo {
   margin: 50px;
-  width: 120px;
   object-fit: contain;
 }
 
 .appBar {
+  overflow: hidden;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -39,8 +39,8 @@
     background-image: url("https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   }
   #appLogo {
-    margin: 15px;
-    width: 100px;
+    margin: 3px;
+    overflow-y: hidden !important;
     object-fit: contain;
   }
 }

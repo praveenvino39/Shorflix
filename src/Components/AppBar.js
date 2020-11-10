@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/AppBar.css";
+import LOGO from "../Images/Logo/LOGO.png";
+import { Link } from "react-router-dom";
 
 function AppBar() {
   const [scrollOpaticity, setScrollOpaticity] = useState(0);
@@ -17,11 +19,10 @@ function AppBar() {
         className="appBar"
         style={{ backgroundColor: `rgba(20, 20, 20,${scrollOpaticity})` }}
       >
-        <img
-          id="appLogo"
-          alt="logo"
-          src="https://fontmeme.com/temporary/7be5e9da7245da203f6e2a92390ad3e2.png"
-        />
+        <Link to="/">
+          <img id="appLogo" alt="logo" src={LOGO} width="200" />
+        </Link>
+
         <div className="avatar">
           <h2 style={{ margin: "0px" }}></h2>
         </div>

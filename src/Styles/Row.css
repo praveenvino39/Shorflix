@@ -3,7 +3,7 @@
 }
 .wrap {
   margin-top: 20px;
-  padding: 10px;
+  padding: 30px;
   margin-bottom: 30px;
   overflow-x: scroll;
 }
@@ -22,7 +22,6 @@
   width: 130px;
   margin: 10px;
   height: 180px;
-  display: flex;
 }
 
 .item-loading {
@@ -36,7 +35,10 @@
 
 .poster-img {
   width: 100%;
-  object-fit: contain;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .item:hover {
@@ -59,4 +61,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.overlay {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0);
+  opacity: 0.4;
+  transition: all 0.5s;
 }
